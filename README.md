@@ -3,7 +3,7 @@
 An interactive, book-length webapp that takes a reader from *"what on earth is a qubit?"* to running
 genuine quantum algorithms — built on and illustrated with the live **CasimirQ** platform.
 
-- **22 chapters**, five parts, novice → professional.
+- **23 chapters**, five parts, novice → professional (including a 53-circuit Circuit Library reference).
 - A **turning-universe** Three.js hero (spiral galaxy + a glowing qubit orbited by electrons).
 - **KaTeX** math, a custom **SVG circuit renderer**, syntax-highlighted **SDK/API** code.
 - **10 real screenshots** of the running CasimirQ app (dashboard, circuit builder, algorithms, a live
@@ -15,7 +15,7 @@ genuine quantum algorithms — built on and illustrated with the live **CasimirQ
 | Part | Title | Chapters |
 |------|-------|----------|
 | I | The Quantum World | Why Quantum · The Qubit & Bloch Sphere · Superposition & Measurement · Entanglement |
-| II | The Language of Circuits | Single-Qubit Gates · Multi-Qubit Gates · Building Circuits in CasimirQ |
+| II | The Language of Circuits | Single-Qubit Gates · Multi-Qubit Gates · Building Circuits in CasimirQ · The Circuit Library |
 | III | The CasimirQ Platform | A Tour · Simulation Engines · Noise Lab & Transpilation |
 | IV | The Algorithm Zoo | Oracles · QFT & QPE · Grover · Shor · Quantum Walks · Hamiltonian Simulation · HHL · VQE & QAOA · Teleportation |
 | V | Build Like a Professional | The Rust SDK · The REST API & Swagger · Capstone |

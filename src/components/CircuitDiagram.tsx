@@ -15,6 +15,8 @@ export interface Col {
   /** controlled operation: filled dots on `controls`, action on `target` */
   ctrl?: { controls: number[]; target: number; kind?: 'x' | 'z' | 'box'; label?: string; family?: GateFamily };
   swap?: [number, number];
+  /** controlled-swap (Fredkin): a control dot linked to a swap on a/b */
+  cswap?: { control: number; a: number; b: number };
   measure?: number[];
   barrier?: boolean;
   /** faint column heading, e.g. a step label */
@@ -159,6 +161,23 @@ export function CircuitDiagram({ qubits, cols, caption, className }: Props) {
                 const y = yOf(w);
                 els.push(
                   <g key={`sw${w}`} stroke="#7dd3fc" strokeWidth={2}>
+                    <line x1={cx - 7} y1={y - 7} x2={cx + 7} y2={y + 7} />
+                    <line x1={cx - 7} y1={y + 7} x2={cx + 7} y2={y - 7} />
+                  </g>,
+                );
+              });
+            }
+
+            if (col.cswap) {
+              const { control, a, b } = col.cswap;
+              const top = Math.min(control, a, b);
+              const bot = Math.max(control, a, b);
+              els.push(<line key="csline" x1={cx} y1={yOf(top)} x2={cx} y2={yOf(bot)} stroke="#7dd3fc" strokeWidth={1.6} />);
+              els.push(<circle key="csctrl" cx={cx} cy={yOf(control)} r={5} fill="#7dd3fc" />);
+              [a, b].forEach((w) => {
+                const y = yOf(w);
+                els.push(
+                  <g key={`cs${w}`} stroke="#7dd3fc" strokeWidth={2}>
                     <line x1={cx - 7} y1={y - 7} x2={cx + 7} y2={y + 7} />
                     <line x1={cx - 7} y1={y + 7} x2={cx + 7} y2={y - 7} />
                   </g>,
