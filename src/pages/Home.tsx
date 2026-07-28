@@ -53,7 +53,7 @@ export function Home() {
 
           <div className="mx-auto mt-14 grid max-w-2xl animate-fade-up grid-cols-3 gap-4" style={{ animationDelay: '240ms' }}>
             {[
-              { icon: Atom, big: '22', small: 'chapters, A → Z' },
+              { icon: Atom, big: String(CHAPTERS.length), small: 'chapters, A → Z' },
               { icon: Cpu, big: '14', small: 'real algorithms' },
               { icon: Boxes, big: '3', small: 'surfaces: UI · SDK · API' },
             ].map((s, i) => (

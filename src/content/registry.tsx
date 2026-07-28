@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 import {
-  Atom, Circle, Waves, Link2, SlidersHorizontal, Network, Blocks,
+  Atom, Circle, Waves, Link2, SlidersHorizontal, Network, Blocks, Library,
   LayoutDashboard, Cpu, Activity, KeyRound, Sigma, Search, Lock,
   Footprints, Clock, Calculator, GitBranch, Send, Boxes, Server, Trophy,
 } from 'lucide-react';
@@ -14,6 +14,7 @@ import Entanglement from './chapters/entanglement';
 import Gates from './chapters/gates';
 import MultiQubit from './chapters/multi-qubit';
 import CircuitsInCasimirQ from './chapters/circuits-in-casimirq';
+import CircuitLibrary from './chapters/circuit-library';
 import PlatformTour from './chapters/platform-tour';
 import Engines from './chapters/engines';
 import NoiseTranspile from './chapters/noise-transpile';
@@ -58,6 +59,7 @@ const raw: Omit<Chapter, 'number'>[] = [
   { slug: 'gates', part: 2, title: 'Single-Qubit Gates', subtitle: 'Rotating the sphere', icon: SlidersHorizontal, minutes: 15, Component: Gates },
   { slug: 'multi-qubit', part: 2, title: 'Multi-Qubit Gates', subtitle: 'CNOT, control & the circuit model', icon: Network, minutes: 14, Component: MultiQubit },
   { slug: 'circuits-in-casimirq', part: 2, title: 'Building Circuits in CasimirQ', subtitle: 'Your first Bell state', icon: Blocks, minutes: 12, Component: CircuitsInCasimirQ },
+  { slug: 'circuit-library', part: 2, title: 'The Circuit Library', subtitle: '53 building blocks, drawn', icon: Library, minutes: 15, Component: CircuitLibrary },
 
   { slug: 'platform-tour', part: 3, title: 'A Tour of CasimirQ', subtitle: 'Dashboard to jobs', icon: LayoutDashboard, minutes: 10, Component: PlatformTour },
   { slug: 'engines', part: 3, title: 'Simulation Engines', subtitle: 'How the state is computed', icon: Cpu, minutes: 12, Component: Engines },
