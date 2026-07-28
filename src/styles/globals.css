@@ -1,0 +1,94 @@
+@import 'katex/dist/katex.min.css';
+@import 'highlight.js/styles/atom-one-dark.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Web fonts (self-hostable; using Google as a progressive enhancement) ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(34, 184, 240, 0.08), transparent 60%),
+    radial-gradient(50rem 50rem at -10% 20%, rgba(139, 92, 246, 0.07), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Starfield grid used behind hero + section dividers */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(30, 45, 71, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 45, 71, 0.5) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 78%);
+}
+
+.glass {
+  @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #7dd3fc 0%, #22b8f0 40%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Reading typography ---------- */
+.prose-book {
+  @apply text-[15.5px] leading-[1.75] text-ink/90;
+}
+.prose-book p {
+  @apply my-4;
+}
+.prose-book strong {
+  @apply font-semibold text-ink;
+}
+.prose-book a {
+  @apply text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary;
+}
+.prose-book ul {
+  @apply my-4 space-y-2 pl-5;
+}
+.prose-book ul li {
+  @apply relative list-none;
+}
+.prose-book ul li::before {
+  content: '';
+  @apply absolute -left-4 top-[0.7em] h-1.5 w-1.5 rounded-full bg-primary/70;
+}
+.prose-book ol {
+  @apply my-4 list-decimal space-y-2 pl-6 marker:text-primary/70;
+}
+.prose-book code:not(pre code) {
+  @apply rounded bg-primary/10 px-1.5 py-0.5 font-mono text-[0.86em] text-primary-soft;
+}
+
+/* KaTeX sits a touch large by default in body copy */
+.katex { font-size: 1.04em; }
+.katex-display { @apply my-6 overflow-x-auto overflow-y-hidden py-1; }
+
+/* highlight.js background transparent so our card shows through */
+.hljs { background: transparent !important; padding: 0 !important; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply rounded-full bg-border; }
+::-webkit-scrollbar-thumb:hover { background: #2a3d5c; }
+
+/* Sidebar active link accent */
+.nav-active {
+  @apply bg-primary/10 text-primary;
+  box-shadow: inset 2px 0 0 0 #22b8f0;
+}
